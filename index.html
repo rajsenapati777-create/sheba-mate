@@ -1,92 +1,420 @@
-<!-- SHEBA MATE BOTTOM BANNER -->
-<section class="sheba-banner">
-  <div class="sheba-banner-content">
-    <h2>Sheba Mate</h2>
-    <h3>আপনার বাড়ি, আমাদের দায়িত্ব ❤️</h3>
-    <p>বাড়ির পরিষেবায় বিশ্বস্ত সঙ্গী</p>
-    <p class="sheba-services">
-      পরিষ্কার-পরিচ্ছন্নতা • ঘরের কাজ • অন্যান্য পরিষেবা
-    </p>
-    <div class="sheba-tagline">
-      আপনার প্রয়োজনেই Sheba Mate
-    </div>
-  </div>
-
-  <div class="sheba-worker">
-    <img
-      src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400"
-      alt="Home cleaning service"
-    >
-  </div>
-</section>
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sheba Mate - Home Services</title>
 
 <style>
-.sheba-banner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  background: #172b4d;
-  color: white;
-  padding: 22px 18px;
-  margin: 20px 12px;
-  border-radius: 16px;
-  overflow: hidden;
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+ font-family:Arial,sans-serif;
+ background:#f4f6fa;
+ color:#222;
+ padding-bottom:20px;
+}
+header{
+ background:#172b4d;
+ color:white;
+ padding:20px 15px;
+ text-align:center;
+}
+header h1{color:#ffd43b;font-size:29px}
+header p{margin-top:7px;font-size:14px}
+
+.ticker{
+ background:#ffd43b;
+ color:#172b4d;
+ padding:11px 0;
+ overflow:hidden;
+ white-space:nowrap;
+ font-weight:bold;
+}
+.ticker span{
+ display:inline-block;
+ padding-left:100%;
+ animation:move 18s linear infinite;
+}
+@keyframes move{
+ from{transform:translateX(0)}
+ to{transform:translateX(-100%)}
 }
 
-.sheba-banner-content {
-  flex: 1;
+.slider{
+ margin:15px;
+ border-radius:14px;
+ overflow:hidden;
+ background:#172b4d;
+ color:white;
+ text-align:center;
+ min-height:155px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ padding:20px;
+}
+.slide h2{color:#ffd43b;font-size:24px;margin-bottom:10px}
+.slide p{font-size:15px;line-height:1.6}
+.slide{display:none}
+.slide.active{display:block}
+
+.section-title{
+ text-align:center;
+ margin:24px 10px 16px;
+ color:#172b4d;
+ font-size:23px;
 }
 
-.sheba-banner h2 {
-  color: #ffd54a;
-  font-size: 27px;
-  margin-bottom: 10px;
+.services{
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:13px;
+ padding:0 13px;
+}
+.service{
+ background:white;
+ border-radius:13px;
+ padding:17px 10px;
+ text-align:center;
+ box-shadow:0 2px 9px #00000012;
+}
+.service .emoji{font-size:36px}
+.service h3{font-size:16px;margin:10px 0}
+.price{
+ color:#168b4b;
+ font-weight:bold;
+ font-size:19px;
+ margin-bottom:12px;
+}
+.book{
+ display:block;
+ background:#168b4b;
+ color:white;
+ text-decoration:none;
+ padding:10px 5px;
+ border-radius:8px;
+ font-weight:bold;
+ font-size:14px;
+ border:none;
+ width:100%;
+ cursor:pointer;
 }
 
-.sheba-banner h3 {
-  font-size: 19px;
-  line-height: 1.5;
-  margin-bottom: 8px;
+.booking{
+ background:white;
+ margin:22px 13px;
+ padding:18px;
+ border-radius:13px;
+ box-shadow:0 2px 9px #00000012;
+}
+.booking h2{
+ text-align:center;
+ color:#172b4d;
+ margin-bottom:17px;
+}
+.booking label{
+ display:block;
+ font-weight:bold;
+ margin:12px 0 6px;
+}
+.booking input,.booking select,.booking textarea{
+ width:100%;
+ padding:12px;
+ border:1px solid #ccc;
+ border-radius:8px;
+ font-size:15px;
+ background:white;
+}
+.booking textarea{min-height:85px;resize:vertical}
+.submit{
+ background:#168b4b;
+ color:white;
+ width:100%;
+ padding:14px;
+ border:0;
+ border-radius:9px;
+ font-size:17px;
+ font-weight:bold;
+ margin-top:18px;
+ cursor:pointer;
 }
 
-.sheba-banner p {
-  font-size: 13px;
-  line-height: 1.6;
+.sheba-banner{
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:12px;
+ background:#172b4d;
+ color:white;
+ padding:22px 16px;
+ margin:25px 12px;
+ border-radius:16px;
+ overflow:hidden;
+}
+.sheba-banner-content{flex:1}
+.sheba-banner h2{
+ color:#ffd54a;
+ font-size:27px;
+ margin-bottom:10px;
+}
+.sheba-banner h3{
+ font-size:18px;
+ line-height:1.5;
+ margin-bottom:8px;
+}
+.sheba-banner p{
+ font-size:13px;
+ line-height:1.6;
+}
+.sheba-services{margin-top:10px}
+.sheba-worker{
+ width:105px;
+ flex-shrink:0;
+}
+.sheba-worker img{
+ width:100%;
+ height:135px;
+ object-fit:cover;
+ border-radius:12px;
+}
+.sheba-tagline{
+ background:#ffd43b;
+ color:#172b4d;
+ text-align:center;
+ font-weight:bold;
+ padding:11px 7px;
+ border-radius:9px;
+ margin-top:15px;
+ font-size:13px;
 }
 
-.sheba-services {
-  margin-top: 10px;
+footer{
+ background:#172b4d;
+ color:white;
+ text-align:center;
+ padding:20px 10px;
+ font-size:13px;
+ line-height:1.8;
 }
 
-.sheba-worker {
-  width: 105px;
-  flex-shrink: 0;
-}
-
-.sheba-worker img {
-  width: 100%;
-  height: 135px;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-.sheba-tagline {
-  background: #ffd43b;
-  color: #172b4d;
-  text-align: center;
-  font-weight: bold;
-  padding: 11px 8px;
-  border-radius: 9px;
-  margin-top: 15px;
-  font-size: 13px;
-}
-
-@media (max-width: 360px) {
-  .sheba-worker {
-    width: 80px;
-  }
+@media(max-width:360px){
+ .sheba-worker{width:80px}
+ .sheba-banner h3{font-size:16px}
 }
 </style>
-<!-- END SHEBA MATE BANNER -->
+</head>
+
+<body>
+
+<header>
+ <h1>Sheba Mate</h1>
+ <p>আপনার বাড়ির বিশ্বস্ত পরিষেবা সঙ্গী ❤️</p>
+</header>
+
+<div class="ticker">
+ <span>স্বাগতম Sheba Mate-এ • বাড়ির পরিষেবা এখন আরও সহজ • আজই আপনার পরিষেবা বুক করুন •</span>
+</div>
+
+<!-- AUTOMATIC BANNERS -->
+<div class="slider">
+
+ <div class="slide active">
+  <h2>Welcome to Sheba Mate</h2>
+  <p>আপনার বাড়ির প্রতিদিনের পরিষেবায় আমরা আছি আপনার পাশে।</p>
+ </div>
+
+ <div class="slide">
+  <h2>Professional Home Cleaning</h2>
+  <p>পরিষ্কার পরিচ্ছন্ন বাড়ির জন্য আজই বুক করুন।</p>
+ </div>
+
+ <div class="slide">
+  <h2>Book Your Service Today</h2>
+  <p>সহজ বুকিং। সরাসরি WhatsApp-এ যোগাযোগ।</p>
+ </div>
+
+</div>
+
+<h2 class="section-title">আমাদের পরিষেবাসমূহ</h2>
+
+<div class="services">
+
+ <div class="service">
+  <div class="emoji">🏠</div>
+  <h3>Home Cleaning</h3>
+  <div class="price">₹250</div>
+  <button class="book" onclick="chooseService('Home Cleaning','250')">Book Now</button>
+ </div>
+
+ <div class="service">
+  <div class="emoji">🚿</div>
+  <h3>Bathroom Cleaning</h3>
+  <div class="price">₹250</div>
+  <button class="book" onclick="chooseService('Bathroom Cleaning','250')">Book Now</button>
+ </div>
+
+ <div class="service">
+  <div class="emoji">🍳</div>
+  <h3>Kitchen Cleaning</h3>
+  <div class="price">₹250</div>
+  <button class="book" onclick="chooseService('Kitchen Cleaning','250')">Book Now</button>
+ </div>
+
+ <div class="service">
+  <div class="emoji">💧</div>
+  <h3>Water Tank Cleaning</h3>
+  <div class="price">₹250</div>
+  <button class="book" onclick="chooseService('Water Tank Cleaning','250')">Book Now</button>
+ </div>
+
+ <div class="service">
+  <div class="emoji">🎨</div>
+  <h3>Painter Service</h3>
+  <div class="price">₹599</div>
+  <button class="book" onclick="chooseService('Painter Service','599')">Book Now</button>
+ </div>
+
+ <div class="service">
+  <div class="emoji">🌴</div>
+  <h3>Coconut Climber</h3>
+  <div class="price">₹99</div>
+  <button class="book" onclick="chooseService('Coconut Climber','99')">Book Now</button>
+ </div>
+
+</div>
+
+<!-- CUSTOMER BOOKING FORM -->
+<div class="booking" id="booking">
+
+ <h2>Book Your Service</h2>
+
+ <form onsubmit="sendBooking(event)">
+
+  <label>আপনার নাম</label>
+  <input type="text" id="customerName" placeholder="আপনার নাম লিখুন" required>
+
+  <label>মোবাইল নম্বর</label>
+  <input type="tel" id="customerPhone" placeholder="আপনার মোবাইল নম্বর" pattern="[0-9]{10}" maxlength="10" required>
+
+  <label>পরিষেবা নির্বাচন করুন</label>
+  <select id="serviceName" required>
+   <option value="">পরিষেবা বেছে নিন</option>
+   <option value="Home Cleaning">Home Cleaning - ₹250</option>
+   <option value="Bathroom Cleaning">Bathroom Cleaning - ₹250</option>
+   <option value="Kitchen Cleaning">Kitchen Cleaning - ₹250</option>
+   <option value="Water Tank Cleaning">Water Tank Cleaning - ₹250</option>
+   <option value="Painter Service">Painter Service - ₹599</option>
+   <option value="Coconut Climber">Coconut Climber - ₹99</option>
+  </select>
+
+  <label>সম্পূর্ণ ঠিকানা</label>
+  <textarea id="customerAddress" placeholder="বাড়ির ঠিকানা, এলাকা, শহর ও পিনকোড লিখুন" required></textarea>
+
+  <label>অতিরিক্ত তথ্য (যদি থাকে)</label>
+  <textarea id="extraInfo" placeholder="আপনার প্রয়োজনীয় তথ্য লিখুন"></textarea>
+
+  <button type="submit" class="submit">
+   WhatsApp-এ অর্ডার করুন
+  </button>
+
+ </form>
+</div>
+
+<!-- BOTTOM BANNER -->
+<section class="sheba-banner">
+
+ <div class="sheba-banner-content">
+  <h2>Sheba Mate</h2>
+  <h3>আপনার বাড়ি, আমাদের দায়িত্ব ❤️</h3>
+  <p>বাড়ির পরিষেবায় বিশ্বস্ত সঙ্গী</p>
+
+  <p class="sheba-services">
+   পরিষ্কার-পরিচ্ছন্নতা • ঘরের কাজ • অন্যান্য পরিষেবা
+  </p>
+
+  <div class="sheba-tagline">
+   আপনার প্রয়োজনেই Sheba Mate
+  </div>
+ </div>
+
+ <div class="sheba-worker">
+  <img
+   src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400"
+   alt="Home cleaning service">
+ </div>
+
+</section>
+
+<footer>
+ <h3>Sheba Mate ❤️</h3>
+ <p>আপনার বাড়ির বিশ্বস্ত পরিষেবা সঙ্গী</p>
+ <p>© 2026 Sheba Mate. All Rights Reserved.</p>
+</footer>
+
+<script>
+
+// AUTOMATIC BANNER SLIDER
+let currentSlide=0;
+const slides=document.querySelectorAll('.slide');
+
+setInterval(function(){
+ slides[currentSlide].classList.remove('active');
+ currentSlide=(currentSlide+1)%slides.length;
+ slides[currentSlide].classList.add('active');
+},3500);
+
+// SELECT SERVICE
+function chooseService(name,price){
+ document.getElementById('serviceName').value=name;
+ document.getElementById('booking').scrollIntoView({
+  behavior:'smooth'
+ });
+}
+
+// WHATSAPP BOOKING
+function sendBooking(event){
+
+ event.preventDefault();
+
+ const name=document.getElementById('customerName').value.trim();
+ const phone=document.getElementById('customerPhone').value.trim();
+ const service=document.getElementById('serviceName').value;
+ const address=document.getElementById('customerAddress').value.trim();
+ const extra=document.getElementById('extraInfo').value.trim();
+
+ if(!name || !phone || !service || !address){
+  alert('সব প্রয়োজনীয় তথ্য পূরণ করুন।');
+  return;
+ }
+
+ const prices={
+  'Home Cleaning':'250',
+  'Bathroom Cleaning':'250',
+  'Kitchen Cleaning':'250',
+  'Water Tank Cleaning':'250',
+  'Painter Service':'599',
+  'Coconut Climber':'99'
+ };
+
+ const message=
+ 'New Booking - Sheba Mate\n\n'+
+ 'Customer Name: '+name+'\n'+
+ 'Mobile: '+phone+'\n'+
+ 'Service: '+service+'\n'+
+ 'Price: Rs. '+prices[service]+'\n'+
+ 'Address: '+address+'\n'+
+ 'Additional Information: '+extra+'\n\n'+
+ 'Please confirm my booking.';
+
+ const whatsappURL=
+ 'https://wa.me/918910952519?text='+
+ encodeURIComponent(message);
+
+ window.open(whatsappURL,'_blank');
+}
+
+</script>
+
+</body>
+</html>
 
