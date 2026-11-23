@@ -1,234 +1,190 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sheba Mate</title>
-
 <style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  background: #f5f6fa;
-  font-family: Arial, sans-serif;
-  color: #222;
-}
-
-header {
-  background: white;
-  padding: 18px;
-  font-size: 25px;
-  font-weight: bold;
-}
-
-header span {
-  color: #e5a900;
-}
-
-.banner {
-  margin: 15px;
-  background: #263653;
-  color: white;
-  padding: 25px 20px;
-  border-radius: 14px;
-  min-height: 155px;
-}
-
-.slide {
-  display: none;
-}
-
-.slide.active {
-  display: block;
-}
-
-.slide h2 {
-  font-size: 25px;
-}
-
-.dots {
-  text-align: center;
-}
-
-.dot {
-  display: inline-block;
-  background: #bbb;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  margin: 5px;
-}
-
-.dot.active {
-  background: #e5a900;
-}
-
-h3 {
-  margin: 22px 15px;
-}
-
-.services {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  padding: 0 15px;
-}
-
-.service {
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.photo {
-  height: 110px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 48px;
-  background: #e9edf3;
-}
-
-.info {
-  padding: 12px;
-}
-
-.price {
-  color: green;
-  font-weight: bold;
-  margin: 10px 0;
-}
-
-button {
-  background: #f4b400;
-  border: 0;
-  padding: 11px;
-  border-radius: 7px;
-  width: 100%;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.whatsapp {
-  display: block;
-  margin: 22px 15px;
-  background: #168b4b;
-  color: white;
-  text-align: center;
-  padding: 16px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #777;
-}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
+body{background:#f4f5f7;color:#222}
+header{background:white;padding:17px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 8px #ddd}
+.logo{font-size:25px;font-weight:bold;color:#263653}
+.logo span{color:#e5a900}
+.location{font-size:12px;color:#777}
+.search{padding:13px;background:white}
+.search input{width:100%;padding:13px;border:1px solid #ddd;border-radius:9px;font-size:15px}
+.banner{margin:12px;height:190px;border-radius:14px;overflow:hidden;position:relative;background:#263653}
+.slide{display:none;height:100%;padding:28px 20px;color:white}
+.slide.active{display:block}
+.slide h2{font-size:25px;margin-bottom:12px}
+.slide p{font-size:14px;line-height:1.6}
+.slide button{margin-top:15px;padding:11px 20px;background:#f2bd26;border:0;border-radius:7px;font-weight:bold}
+.slide:nth-child(2){background:#176b55}
+.slide:nth-child(3){background:#753c46}
+.dots{position:absolute;bottom:10px;left:0;right:0;text-align:center}
+.dot{display:inline-block;width:8px;height:8px;background:#bbb;border-radius:50%;margin:4px}
+.dot.active{background:#f2bd26}
+.section{padding:16px}
+.section h2{font-size:20px;margin-bottom:14px}
+.categories{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.category{background:white;padding:18px 10px;border-radius:12px;text-align:center;box-shadow:0 2px 7px #ddd}
+.emoji{font-size:32px;margin-bottom:9px}
+.category h3{font-size:14px}
+.services{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.service{background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 7px #ddd}
+.service-img{height:105px;display:flex;align-items:center;justify-content:center;background:#e9eef5;font-size:43px}
+.service-info{padding:12px}
+.service h3{font-size:15px;margin-bottom:7px}
+.price{color:#176b55;font-weight:bold;margin-bottom:10px}
+.service button{width:100%;padding:10px;background:#f2bd26;border:0;border-radius:7px;font-weight:bold}
+.offer{margin:15px;padding:22px;background:#263653;color:white;border-radius:12px;text-align:center}
+.offer h2{margin-bottom:8px}
+footer{background:#202d42;color:white;text-align:center;padding:25px 15px;margin-top:20px;font-size:13px;line-height:2}
 </style>
 </head>
-
 <body>
+<header>
+<div>
+<div class="logo">Sheba <span>Mate</span></div>
+<div class="location">Home Services at Your Doorstep</div>
+</div>
+<div>🏠</div>
+</header>
 
-<header>Sheba <span>Mate</span></header>
+<div class="search">
+<input type="search" id="searchBox" placeholder="Search for home services...">
+</div>
 
 <div class="banner">
-
 <div class="slide active">
 <h2>Welcome to Sheba Mate</h2>
-<p>Your Trusted Home Service Partner</p>
+<p>Professional Home Cleaning Services<br>Book trusted services at your doorstep.</p>
+<button onclick="goServices()">Explore Services</button>
 </div>
-
 <div class="slide">
-<h2>Professional Home Cleaning</h2>
-<p>Quality Service at Affordable Prices</p>
+<h2>Keep Your Home Clean</h2>
+<p>Bathroom, Kitchen and Complete Home Cleaning.</p>
+<button onclick="goServices()">Book Now</button>
 </div>
-
 <div class="slide">
-<h2>Book Your Service Today</h2>
-<p>Easy and Quick WhatsApp Booking</p>
+<h2>Quality Home Services</h2>
+<p>Easy Booking. Reliable Service. Better Living.</p>
+<button onclick="goServices()">View Services</button>
 </div>
-
-</div>
-
 <div class="dots">
 <span class="dot active"></span>
 <span class="dot"></span>
 <span class="dot"></span>
 </div>
+</div>
 
-<h3>Our Services</h3>
+<section class="section">
+<h2>Service Categories</h2>
+<div class="categories">
+<div class="category"><div class="emoji">🏠</div><h3>Home Cleaning</h3></div>
+<div class="category"><div class="emoji">🚿</div><h3>Bathroom Cleaning</h3></div>
+<div class="category"><div class="emoji">🍽️</div><h3>Kitchen Cleaning</h3></div>
+<div class="category"><div class="emoji">💧</div><h3>Water Tank Cleaning</h3></div>
+</div>
+</section>
 
-<div class="services" id="services"></div>
+<section class="section" id="services">
+<h2>Popular Services</h2>
+<div class="services">
+<div class="service">
+<div class="service-img">🏠</div>
+<div class="service-info">
+<h3>Home Cleaning</h3>
+<div class="price">Contact for Price</div>
+<button onclick="book('Home Cleaning')">Book Now</button>
+</div>
+</div>
+<div class="service">
+<div class="service-img">🚿</div>
+<div class="service-info">
+<h3>Bathroom Cleaning</h3>
+<div class="price">₹250</div>
+<button onclick="book('Bathroom Cleaning')">Book Now</button>
+</div>
+</div>
+<div class="service">
+<div class="service-img">🍽️</div>
+<div class="service-info">
+<h3>Kitchen Cleaning</h3>
+<div class="price">₹250</div>
+<button onclick="book('Kitchen Cleaning')">Book Now</button>
+</div>
+</div>
+<div class="service">
+<div class="service-img">💧</div>
+<div class="service-info">
+<h3>Water Tank Cleaning</h3>
+<div class="price">₹250</div>
+<button onclick="book('Water Tank Cleaning')">Book Now</button>
+</div>
+</div>
+<div class="service">
+<div class="service-img">🎉</div>
+<div class="service-info">
+<h3>Festival Cleaning</h3>
+<div class="price">Contact for Price</div>
+<button onclick="book('Festival Cleaning')">Book Now</button>
+</div>
+</div>
+<div class="service">
+<div class="service-img">👨‍🍳</div>
+<div class="service-info">
+<h3>Cooking Service</h3>
+<div class="price">Contact for Price</div>
+<button onclick="book('Cooking Service')">Book Now</button>
+</div>
+</div>
+</div>
+</section>
 
-<a class="whatsapp" id="generalBooking" target="_blank">
-Book Now on WhatsApp
-</a>
+<div class="offer">
+<h2>Need Home Service?</h2>
+<p>Make your home cleaner and happier with Sheba Mate.</p>
+</div>
 
 <footer>
-© 2026 Sheba Mate. All Rights Reserved.
+<h2>Sheba Mate</h2>
+<p>Your Trusted Home Service Partner</p>
+<p>© 2026 Sheba Mate. All Rights Reserved.</p>
 </footer>
 
 <script>
+let currentSlide=0;
+const slides=document.querySelectorAll('.slide');
+const dots=document.querySelectorAll('.dot');
 
-const PHONE = "8910952519";
+function showSlide(n){
+slides.forEach(s=>s.classList.remove('active'));
+dots.forEach(d=>d.classList.remove('active'));
+currentSlide=n;
+slides[n].classList.add('active');
+dots[n].classList.add('active');
+}
 
-const services = [
-{name: "Home Cleaning", price: 250, icon: "🏠"},
-{name: "Bathroom Cleaning", price: 250, icon: "🚿"},
-{name: "Kitchen Cleaning", price: 250, icon: "🍳"},
-{name: "Water Tank Cleaning", price: 250, icon: "💧"},
-{name: "Painter Service", price: 599, icon: "🎨"},
-{name: "Coconut Climber", price: 99, icon: "🌴"}
-];
+setInterval(()=>{
+showSlide((currentSlide+1)%slides.length);
+},3000);
 
-services.forEach(s => {
+function goServices(){
+document.getElementById('services').scrollIntoView({behavior:'smooth'});
+}
 
-const msg = `Hello, I want to book ${s.name} Service.
-Price: ₹${s.price}
-Please confirm my booking.`;
+function book(service){
+alert('You selected: '+service+'\nBooking system will be connected in the next step.');
+}
 
-document.getElementById("services").innerHTML += `
-<div class="service">
-<div class="photo">${s.icon}</div>
-<div class="info">
-<strong>${s.name}</strong>
-<div class="price">₹${s.price}</div>
-<button onclick="window.open('https://wa.me/${PHONE}?text='+encodeURIComponent('${msg}'),'_blank')">
-Book Now
-</button>
-</div>
-</div>
-`;
-
+document.getElementById('searchBox').addEventListener('input',function(){
+let value=this.value.toLowerCase();
+document.querySelectorAll('.service').forEach(item=>{
+item.style.display=item.innerText.toLowerCase().includes(value)?'block':'none';
 });
-
-document.getElementById("generalBooking").href =
-"https://wa.me/" + PHONE +
-"?text=" + encodeURIComponent("Hello, I want to know about your home services.");
-
-let currentSlide = 0;
-
-const slides = document.querySelectorAll(".slide");
-const dots = document.querySelectorAll(".dot");
-
-setInterval(() => {
-
-slides[currentSlide].classList.remove("active");
-dots[currentSlide].classList.remove("active");
-
-currentSlide = (currentSlide + 1) % slides.length;
-
-slides[currentSlide].classList.add("active");
-dots[currentSlide].classList.add("active");
-
-}, 3000);
-
+});
 </script>
-
 </body>
 </html>
