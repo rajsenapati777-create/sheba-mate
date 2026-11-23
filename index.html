@@ -1,10 +1,8 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#172b4d">
 <title>Sheba Mate - Home Services</title>
 
 <style>
@@ -13,244 +11,324 @@ body{
  font-family:Arial,sans-serif;
  background:#f4f6fa;
  color:#222;
- padding-bottom:85px;
+ padding-bottom:20px;
 }
 header{
  background:#172b4d;
  color:white;
- padding:16px;
+ padding:20px 15px;
+ text-align:center;
+}
+header h1{color:#ffd43b;font-size:29px}
+header p{margin-top:7px;font-size:14px}
+
+/* MAIN SLIDER */
+.slider{
+ margin:15px;
+ border-radius:14px;
+ overflow:hidden;
+ background:#172b4d;
+ color:white;
+ text-align:center;
+ min-height:155px;
  display:flex;
  align-items:center;
- justify-content:space-between;
+ justify-content:center;
+ padding:20px;
 }
-.logo{font-size:24px;font-weight:bold;color:#ffc83d}
-.logo span{color:white}
-.header-tag{font-size:11px;color:#eee}
-.ticker{
- background:#ffc83d;
+.slide{display:none}
+.slide.active{display:block}
+.slide h2{
+ color:#ffd43b;
+ font-size:24px;
+ margin-bottom:10px;
+}
+.slide p{font-size:15px;line-height:1.6}
+
+/* CATEGORY - ORIGINAL 2x2 DESIGN */
+.section-title{
+ text-align:center;
+ margin:24px 10px 16px;
  color:#172b4d;
- padding:9px;
- font-size:13px;
- font-weight:bold;
- white-space:nowrap;
- overflow:hidden;
+ font-size:23px;
 }
-.ticker div{
+.categories{
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:13px;
+ padding:0 13px;
+}
+.category{
+ border:0;
+ border-radius:13px;
+ padding:17px 8px;
+ text-align:center;
+ cursor:pointer;
+ min-height:125px;
+ box-shadow:0 2px 9px #00000012;
+}
+.category .emoji{font-size:36px}
+.category h3{
+ font-size:15px;
+ margin:9px 0 5px;
+ color:#222;
+}
+.category p{font-size:12px}
+.cat-home{background:#e8f3ff}
+.cat-festival{background:#fff0dc}
+.cat-clean{background:#e8f7ed}
+.cat-other{background:#f2eafe}
+.category.selected{outline:3px solid #168b4b}
+
+/* RUNNING TEXT */
+.ticker{
+ background:#ffd43b;
+ color:#172b4d;
+ padding:11px 0;
+ margin-top:20px;
+ overflow:hidden;
+ white-space:nowrap;
+ font-weight:bold;
+}
+.ticker span{
  display:inline-block;
+ padding-left:100%;
  animation:move 18s linear infinite;
 }
 @keyframes move{
- from{transform:translateX(100%)}
+ from{transform:translateX(0)}
  to{transform:translateX(-100%)}
 }
-.banner-wrap{padding:14px}
-.banner{
- height:155px;
- border-radius:15px;
- padding:24px;
- color:white;
- display:none;
- flex-direction:column;
- justify-content:center;
- background:linear-gradient(120deg,#172b4d,#315b91);
-}
-.banner.active{display:flex}
-.banner h2{font-size:23px;margin-bottom:9px}
-.banner p{font-size:14px}
-.banner button{
- width:max-content;
- margin-top:12px;
- padding:9px 18px;
- border:0;
- border-radius:20px;
- background:#ffc83d;
- color:#172b4d;
- font-weight:bold;
-}
-.banner:nth-child(2){
- background:linear-gradient(120deg,#6b3c20,#c17a37)
-}
-.banner:nth-child(3){
- background:linear-gradient(120deg,#174d42,#278b70)
-}
-.dots{text-align:center;margin-top:8px}
-.dot{
- display:inline-block;
- height:7px;width:7px;
- border-radius:50%;
- background:#bbb;
- margin:3px;
-}
-.dot.active{background:#172b4d}
-.section{padding:14px}
-.section-title{
- font-size:19px;
- color:#172b4d;
- margin-bottom:13px;
-}
-.categories{
- display:flex;
- gap:10px;
- overflow-x:auto;
- padding-bottom:10px;
- scrollbar-width:none;
-}
-.categories::-webkit-scrollbar{display:none}
-.cat{
- flex:0 0 auto;
- background:white;
- border:1px solid #e4e7ed;
- border-radius:25px;
- padding:10px 17px;
- color:#172b4d;
- font-size:13px;
- font-weight:bold;
- cursor:pointer;
-}
-.cat.active{
- background:#172b4d;
- color:#ffc83d;
-}
+
+/* SERVICES */
 .services{
  display:grid;
- grid-template-columns:repeat(2,minmax(0,1fr));
+ grid-template-columns:repeat(2,1fr);
  gap:13px;
+ padding:0 13px;
 }
 .service{
  background:white;
  border-radius:13px;
- padding:14px 10px;
- box-shadow:0 2px 9px #0000000b;
- position:relative;
+ padding:17px 10px;
+ text-align:center;
+ box-shadow:0 2px 9px #00000012;
 }
-.service-icon{
- height:65px;
- display:flex;
- justify-content:center;
- align-items:center;
- font-size:38px;
- background:#f3f5f9;
- border-radius:10px;
- margin-bottom:10px;
-}
-.service h3{
- font-size:14px;
- color:#172b4d;
- min-height:34px;
-}
+.service .emoji{font-size:36px}
+.service h3{font-size:15px;margin:10px 0}
 .price{
- color:#bd8120;
+ color:#168b4b;
  font-weight:bold;
- margin:8px 0;
- font-size:14px;
+ font-size:19px;
+ margin-bottom:12px;
 }
-.service button{
- width:100%;
- border:0;
- background:#172b4d;
+.book{
+ display:block;
+ background:#168b4b;
  color:white;
+ text-decoration:none;
+ padding:10px 5px;
  border-radius:8px;
- padding:10px 4px;
  font-weight:bold;
+ font-size:14px;
+ border:none;
+ width:100%;
  cursor:pointer;
 }
-.service button.added{background:#168253}
-.why{
- background:#172b4d;
- color:white;
- padding:22px;
- margin:14px;
- border-radius:14px;
+.book.added{background:#172b4d}
+.empty{
+ display:none;
+ text-align:center;
+ padding:25px 10px;
+ color:#777;
+ grid-column:1/-1;
 }
-.why h2{color:#ffc83d;margin-bottom:13px}
-.why p{font-size:14px;line-height:1.8}
+
+/* BOOKING FORM */
 .booking{
- margin:14px;
- padding:16px;
- border-radius:14px;
  background:white;
- box-shadow:0 2px 9px #0000000b;
+ margin:22px 13px;
+ padding:18px;
+ border-radius:13px;
+ box-shadow:0 2px 9px #00000012;
 }
-.booking h2{color:#172b4d;margin-bottom:12px}
+.booking h2{
+ text-align:center;
+ color:#172b4d;
+ margin-bottom:17px;
+}
 .booking label{
  display:block;
- font-size:13px;
  font-weight:bold;
  margin:12px 0 6px;
 }
 .booking input,.booking select,.booking textarea{
  width:100%;
  padding:12px;
- border:1px solid #dce0e8;
+ border:1px solid #ccc;
  border-radius:8px;
- font-size:14px;
+ font-size:15px;
  background:white;
 }
-.booking textarea{resize:vertical;min-height:75px}
-.selected-item{
- padding:12px 0;
- border-bottom:1px solid #eee;
+.booking textarea{min-height:85px;resize:vertical}
+
+/* MULTIPLE SELECTED SERVICES */
+.selected-box{
+ background:#f4f6fa;
+ border:1px solid #e0e5ed;
+ border-radius:10px;
+ padding:12px;
+}
+.selected-empty{
+ text-align:center;
+ padding:13px 5px;
+ color:#777;
  font-size:13px;
 }
-.selected-item strong{color:#172b4d}
-.remove{
- float:right;
- border:0;
- background:#ffe5e5;
- color:#b52222;
- border-radius:5px;
- padding:5px 9px;
-}
-.total{
- margin-top:14px;
- padding:13px;
- background:#fff7df;
+.selected-item{
+ background:white;
+ border:1px solid #e5e8ed;
  border-radius:9px;
- font-weight:bold;
+ padding:12px;
+ margin-bottom:10px;
+}
+.selected-name{
  color:#172b4d;
-}
-.whatsapp-btn{
- width:100%;
- border:0;
- padding:14px;
- margin-top:14px;
- background:#168b50;
- color:white;
- font-size:16px;
+ font-size:14px;
  font-weight:bold;
- border-radius:9px;
+}
+.selected-price{
+ color:#168b4b;
+ font-size:13px;
+ font-weight:bold;
+ margin-top:7px;
+}
+.duration-label{
+ display:block;
+ font-size:12px;
+ color:#555;
+ margin:10px 0 5px;
+}
+.duration-select{
+ width:100%;
+ padding:10px;
+ border:1px solid #ccc;
+ border-radius:7px;
+ background:white;
+ font-size:14px;
+}
+.remove-btn{
+ border:0;
+ background:#ffe7e7;
+ color:#b32626;
+ padding:7px 10px;
+ border-radius:7px;
+ font-size:12px;
+ float:right;
  cursor:pointer;
 }
-.empty{
- color:#888;
- font-size:13px;
- padding:12px 0;
+.total-box{
+ background:#fff4d5;
+ color:#172b4d;
+ padding:13px;
+ border-radius:9px;
+ margin-top:12px;
+ line-height:1.7;
+ font-weight:bold;
 }
+.total-box small{
+ font-weight:normal;
+ font-size:12px;
+}
+.submit{
+ background:#168b4b;
+ color:white;
+ width:100%;
+ padding:14px;
+ border:0;
+ border-radius:9px;
+ font-size:17px;
+ font-weight:bold;
+ margin-top:18px;
+ cursor:pointer;
+}
+
+/* BOTTOM BANNER */
+.sheba-banner{
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:12px;
+ background:#172b4d;
+ color:white;
+ padding:22px 16px;
+ margin:25px 12px;
+ border-radius:16px;
+ overflow:hidden;
+}
+.sheba-banner-content{flex:1}
+.sheba-banner h2{
+ color:#ffd54a;
+ font-size:27px;
+ margin-bottom:10px;
+}
+.sheba-banner h3{
+ font-size:18px;
+ line-height:1.5;
+ margin-bottom:8px;
+}
+.sheba-banner p{
+ font-size:13px;
+ line-height:1.6;
+}
+.sheba-services{margin-top:10px}
+.sheba-worker{width:105px;flex-shrink:0}
+.sheba-worker img{
+ width:100%;
+ height:135px;
+ object-fit:cover;
+ border-radius:12px;
+}
+.sheba-tagline{
+ background:#ffd43b;
+ color:#172b4d;
+ text-align:center;
+ font-weight:bold;
+ padding:11px 7px;
+ border-radius:9px;
+ margin-top:15px;
+ font-size:13px;
+}
+
+/* WHATSAPP SUPPORT */
+.support{
+ position:fixed;
+ right:15px;
+ bottom:18px;
+ z-index:1000;
+ background:#168b4b;
+ color:white;
+ text-decoration:none;
+ padding:13px 17px;
+ border-radius:35px;
+ font-weight:bold;
+ font-size:14px;
+ box-shadow:0 3px 12px #0004;
+}
+
+/* FOOTER */
 footer{
  background:#172b4d;
  color:white;
  text-align:center;
- padding:22px 12px;
+ padding:20px 10px;
  font-size:13px;
  line-height:1.8;
 }
-.fixed-wa{
- position:fixed;
- right:16px;
- bottom:17px;
- background:#168b50;
- color:white;
- border-radius:50px;
- padding:13px 18px;
- text-decoration:none;
- font-weight:bold;
- box-shadow:0 3px 12px #0003;
- z-index:10;
-}
-@media(min-width:650px){
- .services{grid-template-columns:repeat(3,1fr)}
- .banner-wrap,.section{max-width:950px;margin:auto}
- .booking,.why{max-width:700px;margin:18px auto}
+
+@media(max-width:360px){
+ .sheba-worker{width:80px}
+ .sheba-banner h3{font-size:16px}
 }
 </style>
 </head>
@@ -258,370 +336,496 @@ footer{
 <body>
 
 <header>
- <div>
-  <div class="logo">Sheba <span>Mate</span></div>
-  <div class="header-tag">Your Trusted Home Service Partner</div>
- </div>
- <div>🏠</div>
+ <h1>Sheba Mate</h1>
+ <p>আপনার বাড়ির বিশ্বস্ত পরিষেবা সঙ্গী ❤️</p>
 </header>
 
+<!-- MAIN SLIDER -->
+<div class="slider">
+
+ <div class="slide active">
+  <h2>Welcome to Sheba Mate</h2>
+  <p>আপনার বাড়ির প্রতিদিনের পরিষেবায় আমরা আছি আপনার পাশে।</p>
+ </div>
+
+ <div class="slide">
+  <h2>Professional Home Cleaning</h2>
+  <p>পরিষ্কার পরিচ্ছন্ন বাড়ির জন্য আজই বুক করুন।</p>
+ </div>
+
+ <div class="slide">
+  <h2>Book Your Service Today</h2>
+  <p>সহজ বুকিং। সরাসরি WhatsApp-এ যোগাযোগ।</p>
+ </div>
+
+</div>
+
+<!-- ORIGINAL FOUR CATEGORIES -->
+<h2 class="section-title">Our Categories</h2>
+
+<div class="categories">
+
+ <button class="category cat-home"
+ onclick="showCategory('home',this)">
+  <div class="emoji">🏠</div>
+  <h3>Home Service</h3>
+  <p>ক্লিক করে দেখুন →</p>
+ </button>
+
+ <button class="category cat-festival"
+ onclick="showCategory('festival',this)">
+  <div class="emoji">🎉</div>
+  <h3>Festival Service</h3>
+  <p>ক্লিক করে দেখুন →</p>
+ </button>
+
+ <button class="category cat-clean"
+ onclick="showCategory('cleaning',this)">
+  <div class="emoji">🧹</div>
+  <h3>Cleaning Service</h3>
+  <p>ক্লিক করে দেখুন →</p>
+ </button>
+
+ <button class="category cat-other"
+ onclick="showCategory('other',this)">
+  <div class="emoji">🛠️</div>
+  <h3>Other Service</h3>
+  <p>ক্লিক করে দেখুন →</p>
+ </button>
+
+</div>
+
+<!-- RUNNING TEXT -->
 <div class="ticker">
- <div>✨ Welcome to Sheba Mate &nbsp; | &nbsp; Quality Home Services &nbsp; | &nbsp; Easy WhatsApp Booking &nbsp; | &nbsp; Book Your Service Today ✨</div>
+ <span>স্বাগতম Sheba Mate-এ • বাড়ির পরিষেবা এখন আরও সহজ • আজই আপনার পরিষেবা বুক করুন ❤️ •</span>
 </div>
 
-<!-- BANNERS -->
-<div class="banner-wrap">
+<!-- SERVICES -->
+<h2 class="section-title" id="serviceHeading">
+ Our Services
+</h2>
 
- <div class="banner active">
-  <h2>Home Cleaning Services</h2>
-  <p>Make your home fresh and beautiful.</p>
-  <button onclick="showServices()">Explore Services</button>
+<div class="services" id="serviceList">
+
+ <div class="service" data-category="home">
+  <div class="emoji">🏠</div>
+  <h3>Home Cleaning</h3>
+  <div class="price">₹250</div>
+  <button class="book" onclick="chooseService('Home Cleaning')">＋ Add Service</button>
  </div>
 
- <div class="banner">
-  <h2>Bathroom Cleaning</h2>
-  <p>Clean bathroom, happy home.</p>
-  <button onclick="showServices()">Book Now</button>
+ <div class="service" data-category="cleaning">
+  <div class="emoji">🚿</div>
+  <h3>Bathroom Cleaning</h3>
+  <div class="price">₹250</div>
+  <button class="book" onclick="chooseService('Bathroom Cleaning')">＋ Add Service</button>
  </div>
 
- <div class="banner">
-  <h2>Kitchen Cleaning</h2>
-  <p>Keep your kitchen neat and clean.</p>
-  <button onclick="showServices()">Explore Now</button>
+ <div class="service" data-category="cleaning">
+  <div class="emoji">🍳</div>
+  <h3>Kitchen Cleaning</h3>
+  <div class="price">₹250</div>
+  <button class="book" onclick="chooseService('Kitchen Cleaning')">＋ Add Service</button>
  </div>
 
- <div class="dots">
-  <span class="dot active"></span>
-  <span class="dot"></span>
-  <span class="dot"></span>
+ <div class="service" data-category="cleaning">
+  <div class="emoji">💧</div>
+  <h3>Water Tank Cleaning</h3>
+  <div class="price">₹250</div>
+  <button class="book" onclick="chooseService('Water Tank Cleaning')">＋ Add Service</button>
  </div>
+
+ <div class="service" data-category="other">
+  <div class="emoji">🎨</div>
+  <h3>Painter Service</h3>
+  <div class="price">₹599</div>
+  <button class="book" onclick="chooseService('Painter Service')">＋ Add Service</button>
+ </div>
+
+ <div class="service" data-category="other">
+  <div class="emoji">🌴</div>
+  <h3>Coconut Climber</h3>
+  <div class="price">₹99</div>
+  <button class="book" onclick="chooseService('Coconut Climber')">＋ Add Service</button>
+ </div>
+
+ <div class="service" data-category="festival">
+  <div class="emoji">🎉</div>
+  <h3>Festival Service</h3>
+  <div class="price">Price on Request</div>
+  <button class="book" onclick="chooseService('Festival Service')">＋ Add Service</button>
+ </div>
+
+ <div class="empty" id="emptyMessage">
+  এই বিভাগে পরিষেবা শীঘ্রই যোগ করা হবে।
+ </div>
+
 </div>
 
-<!-- CATEGORIES -->
-<section class="section" id="serviceSection">
- <h2 class="section-title">Explore Categories</h2>
-
- <div class="categories">
-  <button class="cat active" onclick="filterServices('All',this)">All</button>
-  <button class="cat" onclick="filterServices('Home',this)">🏠 Home</button>
-  <button class="cat" onclick="filterServices('Cleaning',this)">🧹 Cleaning</button>
-  <button class="cat" onclick="filterServices('Special',this)">⭐ Special</button>
- </div>
-
- <h2 class="section-title">Our Services</h2>
- <div class="services" id="services"></div>
-</section>
-
-<!-- BOOKING -->
+<!-- BOOKING FORM -->
 <div class="booking" id="booking">
 
- <h2>🛒 My Selected Services</h2>
+ <h2>Book Your Service</h2>
 
- <div id="selectedServices">
-  <div class="empty">No services selected yet. Tap + Add Service.</div>
- </div>
+ <form onsubmit="sendBooking(event)">
 
- <div class="total" id="total">
-  Total: ₹0
-  <br><small>Contact us for services without a fixed price.</small>
- </div>
+  <!-- MULTIPLE SERVICE SELECTION -->
+  <label>আপনার নির্বাচিত পরিষেবা</label>
 
- <h2 style="margin-top:22px">📋 Booking Details</h2>
+  <div class="selected-box">
+   <div id="selectedServices">
+    <div class="selected-empty">
+     এখনও কোনও পরিষেবা যোগ করা হয়নি।<br>
+     উপরের ＋ Add Service বোতামে ক্লিক করুন।
+    </div>
+   </div>
 
- <label>Your Name</label>
- <input id="customerName" placeholder="Enter your name">
+   <div class="total-box" id="totalBox">
+    মোট নির্ধারিত মূল্য: ₹0
+    <br><small>অতিরিক্ত বা অনুরোধভিত্তিক পরিষেবার মূল্য পরে নিশ্চিত হবে।</small>
+   </div>
+  </div>
 
- <label>Mobile Number</label>
- <input id="customerPhone" type="tel" placeholder="Enter mobile number">
+  <label>আপনার নাম</label>
+  <input type="text" id="customerName"
+  placeholder="আপনার নাম লিখুন" required>
 
- <label>Full Address</label>
- <textarea id="customerAddress" placeholder="Enter your complete address"></textarea>
+  <label>মোবাইল নম্বর</label>
+  <input type="tel" id="customerPhone"
+  placeholder="আপনার মোবাইল নম্বর"
+  pattern="[0-9]{10}" maxlength="10" required>
 
- <label>Preferred Date</label>
- <input id="bookingDate" type="date">
+  <label>সম্পূর্ণ ঠিকানা</label>
+  <textarea id="customerAddress"
+  placeholder="বাড়ির ঠিকানা, এলাকা, শহর ও পিনকোড লিখুন"
+  required></textarea>
 
- <label>Preferred Time</label>
- <input id="bookingTime" type="time">
+  <label>অতিরিক্ত তথ্য (যদি থাকে)</label>
+  <textarea id="extraInfo"
+  placeholder="আপনার প্রয়োজনীয় তথ্য লিখুন"></textarea>
 
- <label>Additional Instructions</label>
- <textarea id="instructions" placeholder="Any special requirements?"></textarea>
+  <button type="submit" class="submit">
+   🟢 WhatsApp-এ অর্ডার করুন
+  </button>
 
- <button class="whatsapp-btn" onclick="sendOrder()">
-  🟢 Confirm Booking on WhatsApp
- </button>
+ </form>
 </div>
 
-<!-- WHY CHOOSE -->
-<div class="why">
- <h2>Why Choose Sheba Mate?</h2>
- <p>
-  ✓ Easy Service Booking<br>
-  ✓ Multiple Services in One Order<br>
-  ✓ Convenient WhatsApp Communication<br>
-  ✓ Simple and User Friendly<br>
-  ✓ Home Service at Your Convenience
- </p>
-</div>
+<!-- BOTTOM BANNER -->
+<section class="sheba-banner">
+
+ <div class="sheba-banner-content">
+  <h2>Sheba Mate</h2>
+  <h3>আপনার বাড়ি, আমাদের দায়িত্ব ❤️</h3>
+  <p>বাড়ির পরিষেবায় বিশ্বস্ত সঙ্গী</p>
+
+  <p class="sheba-services">
+   পরিষ্কার-পরিচ্ছন্নতা • ঘরের কাজ • অন্যান্য পরিষেবা
+  </p>
+
+  <div class="sheba-tagline">
+   আপনার প্রয়োজনেই Sheba Mate
+  </div>
+ </div>
+
+ <div class="sheba-worker">
+  <img
+   src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400"
+   alt="Home cleaning service">
+ </div>
+
+</section>
 
 <footer>
- <h2>Sheba Mate</h2>
- Your Trusted Home Service Partner
- <br>Thank You for Choosing Us ❤️
- <br>© 2026 Sheba Mate
+ <h3>Sheba Mate ❤️</h3>
+ <p>আপনার বাড়ির বিশ্বস্ত পরিষেবা সঙ্গী</p>
+ <p>© 2026 Sheba Mate. All Rights Reserved.</p>
 </footer>
 
-<a class="fixed-wa"
- href="https://wa.me/918910952519"
- target="_blank">WhatsApp</a>
+<!-- WHATSAPP SUPPORT -->
+<a class="support"
+ href="https://wa.me/918910952519?text=Hello%20Sheba%20Mate%2C%20I%20need%20support."
+ target="_blank" rel="noopener">
+ 💬 WhatsApp Support
+</a>
 
 <script>
 
 // WHATSAPP NUMBER
-const PHONE = "918910952519";
+const WHATSAPP_NUMBER="918910952519";
 
-// SERVICES
-const serviceList = [
- {id:1,name:"Home Cleaning",price:250,icon:"🏠",category:"Home"},
- {id:2,name:"Bathroom Cleaning",price:250,icon:"🚿",category:"Cleaning"},
- {id:3,name:"Kitchen Cleaning",price:250,icon:"🍳",category:"Cleaning"},
- {id:4,name:"Water Tank Cleaning",price:250,icon:"💧",category:"Cleaning"},
- {id:5,name:"Deep Cleaning",price:null,icon:"✨",category:"Special"},
- {id:6,name:"Festival Cleaning",price:null,icon:"🎉",category:"Special"}
-];
+// SERVICE PRICE LIST
+const prices={
+ "Home Cleaning":250,
+ "Bathroom Cleaning":250,
+ "Kitchen Cleaning":250,
+ "Water Tank Cleaning":250,
+ "Painter Service":599,
+ "Coconut Climber":99,
+ "Festival Service":null
+};
 
-// SELECTED SERVICES
-let selected = [];
+// MULTIPLE SELECTED SERVICES
+let selectedServices=[];
 
-// DISPLAY SERVICES
-function renderServices(list=serviceList){
+// AUTOMATIC BANNER SLIDER
+let currentSlide=0;
+const slides=document.querySelectorAll('.slide');
 
- const container=document.getElementById("services");
- container.innerHTML="";
+setInterval(function(){
+ slides[currentSlide].classList.remove('active');
+ currentSlide=(currentSlide+1)%slides.length;
+ slides[currentSlide].classList.add('active');
+},3500);
 
- list.forEach(service=>{
+// CATEGORY FILTER
+function showCategory(category,button){
 
-  const isAdded=selected.some(s=>s.id===service.id);
+ const cards=document.querySelectorAll('.service');
+ let count=0;
 
-  const card=document.createElement("div");
-  card.className="service";
+ cards.forEach(function(card){
+  if(card.dataset.category===category){
+   card.style.display='block';
+   count++;
+  }else{
+   card.style.display='none';
+  }
+ });
 
-  const icon=document.createElement("div");
-  icon.className="service-icon";
-  icon.textContent=service.icon;
+ document.querySelectorAll('.category').forEach(function(item){
+  item.classList.remove('selected');
+ });
 
-  const name=document.createElement("h3");
-  name.textContent=service.name;
+ button.classList.add('selected');
 
-  const price=document.createElement("div");
-  price.className="price";
-  price.textContent=service.price===null
-   ?"Price on Request":"₹"+service.price;
+ const names={
+  home:'Home Service',
+  festival:'Festival Service',
+  cleaning:'Cleaning Service',
+  other:'Other Service'
+ };
 
-  const button=document.createElement("button");
-  button.className=isAdded?"added":"";
-  button.textContent=isAdded?"✓ Added":"＋ Add Service";
+ document.getElementById('serviceHeading').textContent=names[category];
 
-  button.onclick=()=>addService(service.id);
+ document.getElementById('emptyMessage').style.display=
+ count===0?'block':'none';
 
-  card.append(icon,name,price,button);
-  container.appendChild(card);
+ document.getElementById('serviceHeading').scrollIntoView({
+  behavior:'smooth',
+  block:'start'
  });
 }
 
-// ADD SERVICE
-function addService(id){
+// ADD SERVICE WITH PLUS
+function chooseService(name){
 
- const service=serviceList.find(s=>s.id===id);
+ const existing=selectedServices.find(s=>s.name===name);
 
- if(selected.some(s=>s.id===id)){
-  alert("This service is already added!");
+ if(existing){
+  alert('এই পরিষেবাটি ইতিমধ্যেই যোগ করা হয়েছে।');
+  document.getElementById('booking').scrollIntoView({
+   behavior:'smooth'
+  });
   return;
  }
 
- selected.push({
-  ...service,
-  duration:"Hour"
+ selectedServices.push({
+  name:name,
+  price:prices[name],
+  duration:'Hour'
  });
 
- updateSelected();
- renderServices();
- document.getElementById("booking").scrollIntoView({
-  behavior:"smooth",block:"start"
+ updateSelectedServices();
+ updateAddButtons();
+
+ document.getElementById('booking').scrollIntoView({
+  behavior:'smooth',
+  block:'start'
  });
+}
+
+// REFRESH ADD BUTTONS
+function updateAddButtons(){
+
+ document.querySelectorAll('.service').forEach(function(card){
+
+  const name=card.querySelector('h3').textContent;
+  const button=card.querySelector('.book');
+
+  const added=selectedServices.some(s=>s.name===name);
+
+  button.textContent=added?'✓ Added':'＋ Add Service';
+  button.classList.toggle('added',added);
+ });
+}
+
+// CHANGE MINUTE / HOUR / MONTHLY
+function changeDuration(index,value){
+
+ if(selectedServices[index]){
+  selectedServices[index].duration=value;
+ }
 }
 
 // REMOVE SERVICE
-function removeService(id){
+function removeService(index){
 
- selected=selected.filter(s=>s.id!==id);
- updateSelected();
- renderServices();
-}
+ selectedServices.splice(index,1);
 
-// CHANGE DURATION
-function changeDuration(id,value){
-
- const item=selected.find(s=>s.id===id);
- if(item){
-  item.duration=value;
-  updateSelected();
- }
+ updateSelectedServices();
+ updateAddButtons();
 }
 
 // UPDATE SELECTED SERVICES
-function updateSelected(){
+function updateSelectedServices(){
 
- const container=document.getElementById("selectedServices");
- container.innerHTML="";
+ const container=document.getElementById('selectedServices');
+ container.innerHTML='';
 
- if(selected.length===0){
-  container.innerHTML='<div class="empty">No services selected yet. Tap + Add Service.</div>';
- }
+ if(selectedServices.length===0){
 
- selected.forEach(service=>{
+  container.innerHTML=
+   '<div class="selected-empty">এখনও কোনও পরিষেবা যোগ করা হয়নি।<br>উপরের ＋ Add Service বোতামে ক্লিক করুন।</div>';
 
-  const item=document.createElement("div");
-  item.className="selected-item";
+ }else{
 
-  const title=document.createElement("strong");
-  title.textContent=service.icon+" "+service.name;
+  selectedServices.forEach(function(service,index){
 
-  const remove=document.createElement("button");
-  remove.className="remove";
-  remove.textContent="Remove";
-  remove.onclick=()=>removeService(service.id);
+   const item=document.createElement('div');
+   item.className='selected-item';
 
-  const duration=document.createElement("select");
-  duration.style.width="100%";
-  duration.style.padding="9px";
-  duration.style.marginTop="9px";
-  duration.style.borderRadius="7px";
-  duration.style.border="1px solid #ddd";
+   const name=document.createElement('span');
+   name.className='selected-name';
+   name.textContent='＋ '+service.name;
 
-  ["Minute","Hour","Monthly"].forEach(option=>{
-   const opt=document.createElement("option");
-   opt.value=option;
-   opt.textContent=option+" Booking";
-   opt.selected=service.duration===option;
-   duration.appendChild(opt);
+   const remove=document.createElement('button');
+   remove.type='button';
+   remove.className='remove-btn';
+   remove.textContent='✕ Remove';
+   remove.onclick=function(){
+    removeService(index);
+   };
+
+   const price=document.createElement('div');
+   price.className='selected-price';
+   price.textContent=service.price===null
+    ?'Price: On Request'
+    :'Listed Price: ₹'+service.price;
+
+   const label=document.createElement('label');
+   label.className='duration-label';
+   label.textContent='Booking Type';
+
+   const select=document.createElement('select');
+   select.className='duration-select';
+
+   ['Minute','Hour','Monthly'].forEach(function(value){
+
+    const option=document.createElement('option');
+    option.value=value;
+    option.textContent=value+' Booking';
+    option.selected=service.duration===value;
+    select.appendChild(option);
+
+   });
+
+   select.onchange=function(){
+    changeDuration(index,select.value);
+   };
+
+   item.appendChild(name);
+   item.appendChild(remove);
+   item.appendChild(price);
+   item.appendChild(label);
+   item.appendChild(select);
+
+   container.appendChild(item);
+
   });
 
-  duration.onchange=()=>changeDuration(service.id,duration.value);
+ }
 
-  const price=document.createElement("div");
-  price.style.marginTop="8px";
-  price.style.color="#a77820";
-  price.textContent=service.price===null
-   ?"Price: To be confirmed"
-   :"Price: ₹"+service.price;
+ // TOTAL LISTED PRICE
+ const total=selectedServices.reduce(function(sum,service){
+  return sum+(service.price||0);
+ },0);
 
-  item.append(title,remove,duration,price);
-  container.appendChild(item);
+ const hasRequest=selectedServices.some(function(service){
+  return service.price===null;
  });
 
- const total=selected.reduce(
-  (sum,s)=>sum+(s.price||0),0
- );
-
- const hasUnknown=selected.some(s=>s.price===null);
-
- document.getElementById("total").innerHTML=
-  "Total listed price: ₹"+total+
-  (hasUnknown?"<br><small>Additional service prices will be confirmed on WhatsApp.</small>":"");
+ document.getElementById('totalBox').innerHTML=
+  'মোট নির্ধারিত মূল্য: ₹'+total+
+  (hasRequest
+   ?'<br><small>অনুরোধভিত্তিক পরিষেবার মূল্য পরে নিশ্চিত হবে।</small>'
+   :'<br><small>নির্বাচিত পরিষেবার প্রদর্শিত মূল্য।</small>');
 }
 
-// CATEGORY FILTER
-function filterServices(category,button){
+// WHATSAPP MULTIPLE SERVICE BOOKING
+function sendBooking(event){
 
- document.querySelectorAll(".cat").forEach(c=>c.classList.remove("active"));
- button.classList.add("active");
+ event.preventDefault();
 
- const list=category==="All"
-  ?serviceList
-  :serviceList.filter(s=>s.category===category);
-
- renderServices(list);
-}
-
-// BANNER SLIDER
-let bannerIndex=0;
-
-setInterval(()=>{
-
- const banners=document.querySelectorAll(".banner");
- const dots=document.querySelectorAll(".dot");
-
- banners[bannerIndex].classList.remove("active");
- dots[bannerIndex].classList.remove("active");
-
- bannerIndex=(bannerIndex+1)%banners.length;
-
- banners[bannerIndex].classList.add("active");
- dots[bannerIndex].classList.add("active");
-
-},3500);
-
-// SCROLL TO SERVICES
-function showServices(){
- document.getElementById("serviceSection").scrollIntoView({
-  behavior:"smooth"
- });
-}
-
-// WHATSAPP ORDER
-function sendOrder(){
-
- if(selected.length===0){
-  alert("Please select at least one service!");
+ if(selectedServices.length===0){
+  alert('আগে অন্তত একটি পরিষেবা যোগ করুন।');
   return;
  }
 
- const name=document.getElementById("customerName").value.trim();
- const phone=document.getElementById("customerPhone").value.trim();
- const address=document.getElementById("customerAddress").value.trim();
- const date=document.getElementById("bookingDate").value;
- const time=document.getElementById("bookingTime").value;
- const instructions=document.getElementById("instructions").value.trim();
+ const name=document.getElementById('customerName').value.trim();
+ const phone=document.getElementById('customerPhone').value.trim();
+ const address=document.getElementById('customerAddress').value.trim();
+ const extra=document.getElementById('extraInfo').value.trim();
 
  if(!name||!phone||!address){
-  alert("Please enter your name, mobile number and address.");
+  alert('সব প্রয়োজনীয় তথ্য পূরণ করুন।');
   return;
  }
 
- let message="*NEW SHEBA MATE BOOKING*%0A";
- message+="--------------------------%0A";
- message+="*Customer Details*%0A";
- message+="Name: "+encodeURIComponent(name)+"%0A";
- message+="Phone: "+encodeURIComponent(phone)+"%0A";
- message+="Address: "+encodeURIComponent(address)+"%0A%0A";
+ let total=0;
+ let message='NEW BOOKING - SHEBA MATE\n\n';
 
- message+="*Selected Services*%0A";
+ message+='CUSTOMER DETAILS\n';
+ message+='Name: '+name+'\n';
+ message+='Mobile: '+phone+'\n';
+ message+='Address: '+address+'\n\n';
 
- selected.forEach((s,i)=>{
-  message+=(i+1)+". "+encodeURIComponent(s.name)+"%0A";
-  message+="Booking: "+encodeURIComponent(s.duration)+"%0A";
-  message+="Price: "+(s.price===null?"To be confirmed":"Rs. "+s.price)+"%0A";
+ message+='SELECTED SERVICES\n';
+
+ selectedServices.forEach(function(service,index){
+
+  message+=(index+1)+'. '+service.name+'\n';
+  message+='Booking Type: '+service.duration+'\n';
+
+  if(service.price===null){
+   message+='Price: On Request\n';
+  }else{
+   message+='Listed Price: Rs. '+service.price+'\n';
+   total+=service.price;
+  }
+
+  message+='\n';
  });
 
- const total=selected.reduce((sum,s)=>sum+(s.price||0),0);
+ message+='TOTAL LISTED PRICE: Rs. '+total+'\n';
+ message+='Final price to be confirmed if applicable.\n';
+ message+='Additional Information: '+(extra||'None')+'\n\n';
+ message+='Please confirm my booking.\n';
+ message+='Thank you - Sheba Mate';
 
- message+="%0A*Total Listed Price: Rs. "+total+"*%0A";
- if(selected.some(s=>s.price===null)){
-  message+="Some service prices need confirmation.%0A";
- }
+ const whatsappURL=
+  'https://wa.me/'+WHATSAPP_NUMBER+
+  '?text='+encodeURIComponent(message);
 
- message+="%0APreferred Date: "+encodeURIComponent(date||"Not specified");
- message+="%0APreferred Time: "+encodeURIComponent(time||"Not specified");
- message+="%0AInstructions: "+encodeURIComponent(instructions||"None");
- message+="%0A%0AThank you - Sheba Mate";
+ window.open(whatsappURL,'_blank');
 
- window.open("https://wa.me/"+PHONE+"?text="+message,"_blank");
 }
 
 // INITIAL LOAD
-renderServices();
+updateSelectedServices();
 
 </script>
 
 </body>
-</html>
+ </html>
+
