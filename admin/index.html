@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ShebaMate Admin Panel</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f3f5fa;font-family:Arial,sans-serif;color:#20283a}
+header{background:#172b50;color:white;padding:22px}
+header h2{margin:0 0 6px}
+header p{margin:0;color:#cbd6e9;font-size:13px}
+nav{display:flex;overflow:auto;background:white;padding:10px;gap:8px}
+nav a{padding:10px 13px;background:#eef2fa;border-radius:9px;color:#253b62;text-decoration:none;white-space:nowrap;font-size:13px}
+main{padding:15px;max-width:850px;margin:auto}
+section{background:white;padding:18px;margin:14px 0;border-radius:14px;box-shadow:0 3px 14px #172b5010}
+h3{margin-top:0;color:#20385f}
+input,select,textarea{width:100%;padding:12px;margin:7px 0 13px;border:1px solid #d8deea;border-radius:8px;font-size:14px}
+button{background:#244b83;color:white;border:0;padding:11px 16px;border-radius:8px;margin:4px 0}
+small{color:#68758b}
+.item{padding:12px;background:#f5f7fb;border-radius:9px;margin:8px 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stat{background:#eef3fb;padding:15px;border-radius:10px}
+.stat b{font-size:22px;display:block;margin-top:7px}
+</style>
+</head>
+<body>
+<header>
+<h2>ShebaMate Admin</h2>
+<p>Management Dashboard</p>
+</header>
+<nav>
+<a href="#dashboard">Dashboard</a>
+<a href="#services">Services</a>
+<a href="#bookings">Bookings</a>
+<a href="#locations">Locations</a>
+<a href="#banners">Banners</a>
+<a href="#whatsapp">WhatsApp</a>
+<a href="#orders">Customer Orders</a>
+<a href="#settings">Settings</a>
+</nav>
+<main>
+<section id="dashboard">
+<h3>Dashboard</h3>
+<div class="grid">
+<div class="stat">Total Bookings<b>—</b></div>
+<div class="stat">Active Services<b>—</b></div>
+<div class="stat">Pending Orders<b>—</b></div>
+<div class="stat">Service Areas<b>—</b></div>
+</div>
+<p><small>Live database connection will be added in the next stage.</small></p>
+</section>
+
+<section id="services">
+<h3>Services & Pricing</h3>
+<label>Service Category</label><input placeholder="e.g. Home Cleaning">
+<label>Service Name</label><input placeholder="Enter service name">
+<label>Description</label><textarea placeholder="Description visible to customers"></textarea>
+<label>Price (₹)</label><input type="number" placeholder="Enter price">
+<label>Pricing Type</label>
+<select><option>Fixed Price</option><option>Monthly</option><option>Per Minute</option><option>Per Hour</option><option>Percentage</option></select>
+<button>Add Service</button>
+<div class="item">Service management: Add · Edit · Enable/Disable · Remove</div>
+</section>
+
+<section id="bookings">
+<h3>Bookings & Orders</h3>
+<div class="item">Customer name · Mobile · Service · Options · Price</div>
+<div class="item">Booking date & time · Service area · Full address</div>
+<label>Update Booking Status</label>
+<select><option>Pending</option><option>Accepted</option><option>In Progress</option><option>Completed</option><option>Cancelled</option></select>
+<button>Update Status</button>
+</section>
+
+<section id="locations">
+<h3>Service Location Management</h3>
+<label>Area Name</label><input placeholder="Enter service area">
+<button>Add Area</button>
+<div class="item">Add · Edit · Enable/Disable · Remove service areas</div>
+<p><small>Customers will be informed when service is unavailable in their area.</small></p>
+</section>
+
+<section id="banners">
+<h3>Banner Management</h3>
+<p>Top rotating banners — 4 images</p>
+<div class="item">Banner 1 <input type="file" accept="image/*"></div>
+<div class="item">Banner 2 <input type="file" accept="image/*"></div>
+<div class="item">Banner 3 <input type="file" accept="image/*"></div>
+<div class="item">Banner 4 <input type="file" accept="image/*"></div>
+<p>Bottom Banner</p>
+<input type="file" accept="image/*">
+<small>Images will be uploaded directly from your phone gallery.</small>
+</section>
+
+<section id="whatsapp">
+<h3>WhatsApp Settings</h3>
+<label>WhatsApp Number</label>
+<input placeholder="Country code + mobile number">
+<button>Save WhatsApp Settings</button>
+</section>
+
+<section id="orders">
+<h3>Customer Orders</h3>
+<div class="item">Customers can view only their own orders, booking date, price and status after secure login.</div>
+</section>
+
+<section id="settings">
+<h3>Admin Settings</h3>
+<label>Admin Email</label><input type="email" placeholder="Admin email">
+<label>Change Password</label><input type="password" placeholder="New password">
+<button>Update Settings</button>
+</section>
+<p><small>ShebaMate Admin Panel Preview. Secure login, database, image storage and live app synchronization are not connected yet.</small></p>
+</main>
+</body>
+  </html>
